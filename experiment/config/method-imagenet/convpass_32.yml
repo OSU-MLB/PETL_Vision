@@ -1,0 +1,10 @@
+method_name: convpass
+ft_attn_module: convpass
+ft_attn_mode: parallel
+ft_attn_ln: after
+ft_mlp_module: convpass
+ft_mlp_mode: parallel
+ft_mlp_ln: after
+convpass_scaler: 1
+convpass_bottleneck: 32
+convpass_xavier_init: True

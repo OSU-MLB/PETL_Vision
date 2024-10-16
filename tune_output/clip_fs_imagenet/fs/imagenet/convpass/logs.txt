@@ -1,0 +1,96 @@
+[09/25 00:07:19][INFO] PETL_vision:   58: Rank of current process: 0. World size: 1
+[09/25 00:07:19][INFO] PETL_vision:   59: Environment info:
+-------------------  ----------------------------------------------------
+Python               3.7.16 (default, Jan 17 2023, 22:20:44) [GCC 11.2.0]
+ENV_MODULE           <not set>
+PyTorch              1.13.0+cu117
+PyTorch Debug Build  False
+CUDA available       True
+CUDA ID              0
+GPU 0                NVIDIA GeForce RTX 3090
+-------------------  ----------------------------------------------------
+PyTorch built with:
+  - GCC 9.3
+  - C++ Version: 201402
+  - Intel(R) Math Kernel Library Version 2020.0.0 Product Build 20191122 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.6.0 (Git Hash 52b5f107dd9cf10910aaa19cb47f3abf9b349815)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.7
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86
+  - CuDNN 8.5
+  - Magma 2.6.1
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.7, CUDNN_VERSION=8.5.0, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -fabi-version=11 -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wunused-local-typedefs -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Werror=cast-function-type -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.13.0, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, 
+
+[09/25 00:07:19][INFO] PETL_vision:   63: Training with config:
+[09/25 00:07:19][INFO] PETL_vision:   64: {'adapter_bottleneck': 64,
+ 'adapter_init': 'lora_kaiming',
+ 'adapter_scaler': 0.1,
+ 'attention_index': None,
+ 'attention_type': 'full',
+ 'batch_size': 256,
+ 'bitfit': False,
+ 'block_index': None,
+ 'convpass_bottleneck': 32,
+ 'convpass_init': 'lora_xavier',
+ 'convpass_scaler': 1,
+ 'convpass_xavier_init': True,
+ 'crop_size': 224,
+ 'data': 'fs-imagenet',
+ 'data_path': 'data_folder',
+ 'debug': False,
+ 'difffit': False,
+ 'drop_path_rate': 0,
+ 'early_patience': 10,
+ 'epoch': 100,
+ 'eval_freq': 1,
+ 'experiment_name': 'clip_fs_imagenet',
+ 'fact_dim': 8,
+ 'fact_scaler': 1.0,
+ 'fact_type': None,
+ 'final_acc_hp': False,
+ 'final_run': False,
+ 'ft_attn_ln': 'after',
+ 'ft_attn_mode': 'parallel',
+ 'ft_attn_module': 'convpass',
+ 'ft_mlp_ln': 'after',
+ 'ft_mlp_mode': 'parallel',
+ 'ft_mlp_module': 'convpass',
+ 'full': False,
+ 'gpu_num': 1,
+ 'ln': False,
+ 'lora_bottleneck': 0,
+ 'lr_min': 1e-06,
+ 'merge_factor': 1,
+ 'method_name': 'convpass',
+ 'mlp_index': None,
+ 'mlp_type': 'full',
+ 'model': 'vit',
+ 'momentum': 0.9,
+ 'normalized': True,
+ 'optimizer': 'adamw',
+ 'output_dir': './tune_output/clip_fs_imagenet/fs/imagenet/convpass',
+ 'pretrained_weights': 'vit_base_patch16_clip_224',
+ 'random_seed': 42,
+ 'repadapter_bottleneck': 8,
+ 'repadapter_group': 2,
+ 'repadapter_init': 'lora_xavier',
+ 'repadapter_scaler': 1,
+ 'ssf': False,
+ 'store_ckp': True,
+ 'test_batch_size': 1024,
+ 'vpt_dropout': 0.1,
+ 'vpt_layer': None,
+ 'vpt_mode': None,
+ 'vpt_num': 10,
+ 'vqt_dropout': 0.1,
+ 'vqt_num': 0,
+ 'warmup_epoch': 10,
+ 'warmup_lr_init': 1e-07}
+[09/25 00:07:20][INFO] PETL_vision:   31: load head from pretrained_weights/imagenet_clip_head.pkl
+[09/25 00:07:22][INFO] PETL_vision:   12: load proj from pretrained_weights/imagenet_clip_proj.pkl
+[09/25 00:07:22][INFO] PETL_vision:   75: Total Parameters: 88126440	 Gradient Parameters: 2327016	 Gradient Parameters No Head: 1420800
+[09/25 00:07:22][INFO] PETL_vision:   76: total tuned percent:2.64 %
+[09/25 00:07:22][INFO] PETL_vision:   77: total tuned percent no head:1.61 %

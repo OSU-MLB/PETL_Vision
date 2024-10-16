@@ -1,0 +1,8 @@
+method_name: rand_h_adapter_1
+ft_mlp_module: adapter
+ft_mlp_mode: sequential_after
+ft_attn_module: adapter
+ft_attn_mode: sequential_after
+adapter_scaler:  0.01
+adapter_bottleneck: 1
+adapter_init: xavier

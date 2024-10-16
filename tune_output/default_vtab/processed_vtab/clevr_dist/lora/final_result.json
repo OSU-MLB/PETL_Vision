@@ -1,0 +1,1 @@
+{"avg_acc": 63.24, "avg_best_acc": 63.9, "inserted_parameters": 589824, "best_tune": {"lora_bottleneck": 16, "lr": 0.001, "wd": 0.001}}

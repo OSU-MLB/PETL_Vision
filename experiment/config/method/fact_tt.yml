@@ -1,0 +1,4 @@
+method_name: fact_tt
+fact_dim: [8, 16, 32]
+fact_scaler: [0.01, 0.1, 1, 10, 100]
+fact_type: tt

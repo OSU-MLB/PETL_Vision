@@ -1,0 +1,4 @@
+method_name: fact_tk_2
+fact_dim: 2
+fact_scaler: [0.1, 1]
+fact_type: tk

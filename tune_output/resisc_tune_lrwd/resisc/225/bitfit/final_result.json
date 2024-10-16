@@ -1,0 +1,1 @@
+{"avg_acc": 56.16, "avg_best_acc": 56.24, "inserted_parameters": 102912, "best_tune": {"drop_path_rate": 0, "lr": 0.0005, "wd": 0.0001}}

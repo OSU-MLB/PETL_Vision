@@ -1,0 +1,3 @@
+param_set,train_loss,train_top1,train_top5,val_loss,val_top1,val_top5,val_best_loss,val_best_top1,val_best_top5
+{'lr': 0.0005},0.02,99.22,100.0,0.01,99.74,100.0,0.01,99.74,100.0
+{'lr': 0.001},0.0,99.95,100.0,0.0,100.0,100.0,0.0,100.0,100.0

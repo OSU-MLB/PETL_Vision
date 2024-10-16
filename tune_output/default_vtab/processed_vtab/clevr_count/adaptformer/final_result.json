@@ -1,0 +1,1 @@
+{"avg_acc": 82.78, "avg_best_acc": 82.89, "inserted_parameters": 599424, "best_tune": {"adapter_bottleneck": 32, "adapter_scaler": 0.1, "lr": 0.001, "wd": 0.0001}}

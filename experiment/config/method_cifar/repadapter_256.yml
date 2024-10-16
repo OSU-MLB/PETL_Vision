@@ -1,0 +1,7 @@
+method_name: repadapter_256
+ft_attn_module: repadapter
+ft_attn_mode: sequential_before
+ft_mlp_module: repadapter
+ft_mlp_mode: sequential_before
+repadapter_bottleneck: 256
+repadapter_scaler: [0.1, 0.5, 1]

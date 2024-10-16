@@ -1,0 +1,3 @@
+method_name: attn_full_11
+attention_type: full
+attention_index: (11, )

@@ -1,0 +1,7 @@
+"method_name": "adaptformer_32"
+"ft_mlp_module": "adapter"
+"ft_mlp_mode": "parallel"
+"ft_mlp_ln": "before"
+"adapter_init": "lora_kaiming"
+"adapter_bottleneck": 32
+"adapter_scaler": [0.05, 0.1, 0.2]

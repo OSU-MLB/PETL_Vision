@@ -1,0 +1,1 @@
+{"avg_acc": 65.26, "avg_best_acc": 66.53, "inserted_parameters": 3840, "best_tune": {"lr": 0.01, "vpt_num": 5, "wd": 0.001}}

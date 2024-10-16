@@ -1,0 +1,1 @@
+{"avg_acc": 81.98, "avg_best_acc": 84.95, "inserted_parameters": 327552, "best_tune": {"convpass_bottleneck": 8, "convpass_scaler": 0.01, "convpass_xavier_init": true, "lr": 0.01, "wd": 0.0001}}

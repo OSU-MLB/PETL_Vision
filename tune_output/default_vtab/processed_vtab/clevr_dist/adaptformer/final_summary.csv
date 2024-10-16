@@ -1,0 +1,4 @@
+run_idx,train_loss,train_top1,train_top5,test_loss,test_top1,test_top5
+0,0.12,97.08,100.0,1.52,62.07,99.95
+run_idx,train_loss,train_top1,train_top5,test_loss,test_top1,test_top5
+0,0.1,97.71,100.0,1.45,62.85,99.98

@@ -1,0 +1,1 @@
+{"avg_acc": 89.81, "avg_best_acc": 90.08, "inserted_parameters": 369664, "best_tune": {"fact_dim": 64, "fact_scaler": 0.1, "lr": 0.01, "wd": 0.0001}}

@@ -1,0 +1,478 @@
+[09/23 22:52:24][INFO] PETL_vision:   58: Rank of current process: 0. World size: 1
+[09/23 22:52:24][INFO] PETL_vision:   59: Environment info:
+-------------------  ----------------------------------------------------
+Python               3.7.16 (default, Jan 17 2023, 22:20:44) [GCC 11.2.0]
+ENV_MODULE           <not set>
+PyTorch              1.13.0+cu117
+PyTorch Debug Build  False
+CUDA available       True
+CUDA ID              0
+GPU 0                NVIDIA GeForce RTX 3090
+-------------------  ----------------------------------------------------
+PyTorch built with:
+  - GCC 9.3
+  - C++ Version: 201402
+  - Intel(R) Math Kernel Library Version 2020.0.0 Product Build 20191122 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.6.0 (Git Hash 52b5f107dd9cf10910aaa19cb47f3abf9b349815)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.7
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86
+  - CuDNN 8.5
+  - Magma 2.6.1
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.7, CUDNN_VERSION=8.5.0, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -fabi-version=11 -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wunused-local-typedefs -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Werror=cast-function-type -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.13.0, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, 
+
+[09/23 22:52:24][INFO] PETL_vision:   63: Training with config:
+[09/23 22:52:24][INFO] PETL_vision:   64: {'adapter_bottleneck': 64,
+ 'adapter_init': 'lora_kaiming',
+ 'adapter_scaler': 0.1,
+ 'attention_index': None,
+ 'attention_type': 'full',
+ 'batch_size': 64,
+ 'bitfit': False,
+ 'block_index': None,
+ 'convpass_bottleneck': 8,
+ 'convpass_init': 'lora_xavier',
+ 'convpass_scaler': 10,
+ 'convpass_xavier_init': False,
+ 'crop_size': 224,
+ 'data': 'processed_vtab-caltech101',
+ 'data_path': 'data_folder/vtab_processed',
+ 'debug': False,
+ 'difffit': False,
+ 'drop_path_rate': 0.1,
+ 'early_patience': 100,
+ 'epoch': 100,
+ 'eval_freq': 200,
+ 'experiment_name': 'default_vtab',
+ 'fact_dim': 8,
+ 'fact_scaler': 1.0,
+ 'fact_type': None,
+ 'final_output_name': 'final_result.json',
+ 'final_run': False,
+ 'ft_attn_ln': 'before',
+ 'ft_attn_mode': 'parallel',
+ 'ft_attn_module': None,
+ 'ft_mlp_ln': 'before',
+ 'ft_mlp_mode': 'parallel',
+ 'ft_mlp_module': None,
+ 'full': False,
+ 'gpu_num': 1,
+ 'ln': False,
+ 'lora_bottleneck': 0,
+ 'lr_min': 1e-05,
+ 'merge_factor': 1,
+ 'method_name': 'lora',
+ 'mlp_index': None,
+ 'mlp_type': 'full',
+ 'model': 'vit',
+ 'momentum': 0.9,
+ 'normalized': False,
+ 'optimizer': 'adamw',
+ 'output_dir': './tune_output/default_vtab/processed_vtab/caltech101/lora',
+ 'pretrained_weights': 'vit_base_patch16_224_in21k',
+ 'random_seed': 42,
+ 'repadapter_bottleneck': 8,
+ 'repadapter_group': 2,
+ 'repadapter_init': 'lora_xavier',
+ 'repadapter_scaler': 1,
+ 'ssf': False,
+ 'store_ckp': False,
+ 'test_batch_size': 512,
+ 'vpt_dropout': 0.1,
+ 'vpt_layer': None,
+ 'vpt_mode': None,
+ 'vpt_num': 10,
+ 'vqt_dropout': 0.1,
+ 'vqt_num': 0,
+ 'warmup_epoch': 10,
+ 'warmup_lr_init': 1e-06}
+[09/23 22:52:24][INFO] PETL_vision:   53: Start loading caltech101
+[09/23 22:52:24][INFO] PETL_vision:   24: Loading processed vtab data ...
+[09/23 22:52:24][INFO] PETL_vision:   30: Loading training and validation  data (tuning for vtab)...
+[09/23 22:55:28][INFO] PETL_vision:   58: Rank of current process: 0. World size: 1
+[09/23 22:55:28][INFO] PETL_vision:   59: Environment info:
+-------------------  ----------------------------------------------------
+Python               3.7.16 (default, Jan 17 2023, 22:20:44) [GCC 11.2.0]
+ENV_MODULE           <not set>
+PyTorch              1.13.0+cu117
+PyTorch Debug Build  False
+CUDA available       True
+CUDA ID              0
+GPU 0                NVIDIA GeForce RTX 3090
+-------------------  ----------------------------------------------------
+PyTorch built with:
+  - GCC 9.3
+  - C++ Version: 201402
+  - Intel(R) Math Kernel Library Version 2020.0.0 Product Build 20191122 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.6.0 (Git Hash 52b5f107dd9cf10910aaa19cb47f3abf9b349815)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.7
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86
+  - CuDNN 8.5
+  - Magma 2.6.1
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.7, CUDNN_VERSION=8.5.0, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -fabi-version=11 -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wunused-local-typedefs -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Werror=cast-function-type -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.13.0, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, 
+
+[09/23 22:55:28][INFO] PETL_vision:   63: Training with config:
+[09/23 22:55:28][INFO] PETL_vision:   64: {'adapter_bottleneck': 64,
+ 'adapter_init': 'lora_kaiming',
+ 'adapter_scaler': 0.1,
+ 'attention_index': None,
+ 'attention_type': 'full',
+ 'batch_size': 64,
+ 'bitfit': False,
+ 'block_index': None,
+ 'convpass_bottleneck': 8,
+ 'convpass_init': 'lora_xavier',
+ 'convpass_scaler': 10,
+ 'convpass_xavier_init': False,
+ 'crop_size': 224,
+ 'data': 'processed_vtab-caltech101',
+ 'data_path': 'data_folder/vtab_processed',
+ 'debug': False,
+ 'difffit': False,
+ 'drop_path_rate': 0.1,
+ 'early_patience': 100,
+ 'epoch': 100,
+ 'eval_freq': 200,
+ 'experiment_name': 'default_vtab',
+ 'fact_dim': 8,
+ 'fact_scaler': 1.0,
+ 'fact_type': None,
+ 'final_output_name': 'final_result.json',
+ 'final_run': False,
+ 'ft_attn_ln': 'before',
+ 'ft_attn_mode': 'parallel',
+ 'ft_attn_module': None,
+ 'ft_mlp_ln': 'before',
+ 'ft_mlp_mode': 'parallel',
+ 'ft_mlp_module': None,
+ 'full': False,
+ 'gpu_num': 1,
+ 'ln': False,
+ 'lora_bottleneck': 0,
+ 'lr_min': 1e-05,
+ 'merge_factor': 1,
+ 'method_name': 'lora',
+ 'mlp_index': None,
+ 'mlp_type': 'full',
+ 'model': 'vit',
+ 'momentum': 0.9,
+ 'normalized': False,
+ 'optimizer': 'adamw',
+ 'output_dir': './tune_output/default_vtab/processed_vtab/caltech101/lora',
+ 'pretrained_weights': 'vit_base_patch16_224_in21k',
+ 'random_seed': 42,
+ 'repadapter_bottleneck': 8,
+ 'repadapter_group': 2,
+ 'repadapter_init': 'lora_xavier',
+ 'repadapter_scaler': 1,
+ 'ssf': False,
+ 'store_ckp': False,
+ 'test_batch_size': 512,
+ 'vpt_dropout': 0.1,
+ 'vpt_layer': None,
+ 'vpt_mode': None,
+ 'vpt_num': 10,
+ 'vqt_dropout': 0.1,
+ 'vqt_num': 0,
+ 'warmup_epoch': 10,
+ 'warmup_lr_init': 1e-06}
+[09/23 22:55:28][INFO] PETL_vision:   35: Start loading caltech101
+[09/23 22:55:28][INFO] PETL_vision:   24: Loading processed vtab data ...
+[09/23 22:55:28][INFO] PETL_vision:   30: Loading training and validation  data (tuning for vtab)...
+[09/23 22:55:28][INFO] PETL_vision:   89: Finish setup loaders
+[09/23 22:55:28][INFO] PETL_vision:   39: Total tune sets: 36
+[09/23 22:55:28][INFO] PETL_vision:   42: check if this set is run  before
+[09/23 22:55:28][INFO] PETL_vision:   49: need to run this set
+[09/23 22:55:28][INFO] PETL_vision:   50: {'lora_bottleneck': 1, 'lr': 0.001, 'wd': 0}
+[09/23 22:55:28][INFO] PETL_vision:   54: Tuning with this set:
+[09/23 22:55:29][INFO] PETL_vision:   75: Total Parameters: 85913958	 Gradient Parameters: 115302	 Gradient Parameters No Head: 36864
+[09/23 22:55:29][INFO] PETL_vision:   76: total tuned percent:0.13 %
+[09/23 22:55:29][INFO] PETL_vision:   77: total tuned percent no head:0.04 %
+[09/23 22:55:30][INFO] PETL_vision:   35: 	Setting up the optimizer...
+[09/23 22:55:30][INFO] PETL_vision:   96: Training 1 / 100 epoch, with learning rate [1e-06]
+[09/23 23:29:24][INFO] PETL_vision:   58: Rank of current process: 0. World size: 1
+[09/23 23:30:54][INFO] PETL_vision:   58: Rank of current process: 0. World size: 1
+[09/23 23:30:54][INFO] PETL_vision:   59: Environment info:
+-------------------  ----------------------------------------------------
+Python               3.7.16 (default, Jan 17 2023, 22:20:44) [GCC 11.2.0]
+ENV_MODULE           <not set>
+PyTorch              1.13.0+cu117
+PyTorch Debug Build  False
+CUDA available       True
+CUDA ID              0
+GPU 0                NVIDIA GeForce RTX 3090
+-------------------  ----------------------------------------------------
+PyTorch built with:
+  - GCC 9.3
+  - C++ Version: 201402
+  - Intel(R) Math Kernel Library Version 2020.0.0 Product Build 20191122 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.6.0 (Git Hash 52b5f107dd9cf10910aaa19cb47f3abf9b349815)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.7
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86
+  - CuDNN 8.5
+  - Magma 2.6.1
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.7, CUDNN_VERSION=8.5.0, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -fabi-version=11 -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wunused-local-typedefs -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Werror=cast-function-type -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.13.0, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, 
+
+[09/23 23:30:54][INFO] PETL_vision:   63: Training with config:
+[09/23 23:30:54][INFO] PETL_vision:   64: {'adapter_bottleneck': 64,
+ 'adapter_init': 'lora_kaiming',
+ 'adapter_scaler': 0.1,
+ 'attention_index': None,
+ 'attention_type': 'full',
+ 'batch_size': 64,
+ 'bitfit': False,
+ 'block_index': None,
+ 'convpass_bottleneck': 8,
+ 'convpass_init': 'lora_xavier',
+ 'convpass_scaler': 10,
+ 'convpass_xavier_init': False,
+ 'crop_size': 224,
+ 'data': 'processed_vtab-caltech101',
+ 'data_path': 'data_folder/vtab_processed',
+ 'debug': False,
+ 'difffit': False,
+ 'drop_path_rate': 0.1,
+ 'early_patience': 100,
+ 'epoch': 100,
+ 'eval_freq': 200,
+ 'experiment_name': 'default_vtab',
+ 'fact_dim': 8,
+ 'fact_scaler': 1.0,
+ 'fact_type': None,
+ 'final_output_name': 'final_result.json',
+ 'final_run': False,
+ 'ft_attn_ln': 'before',
+ 'ft_attn_mode': 'parallel',
+ 'ft_attn_module': None,
+ 'ft_mlp_ln': 'before',
+ 'ft_mlp_mode': 'parallel',
+ 'ft_mlp_module': None,
+ 'full': False,
+ 'gpu_num': 1,
+ 'ln': False,
+ 'lora_bottleneck': 0,
+ 'lr_min': 1e-05,
+ 'merge_factor': 1,
+ 'method_name': 'lora',
+ 'mlp_index': None,
+ 'mlp_type': 'full',
+ 'model': 'vit',
+ 'momentum': 0.9,
+ 'normalized': False,
+ 'optimizer': 'adamw',
+ 'output_dir': './tune_output/default_vtab/processed_vtab/caltech101/lora',
+ 'pretrained_weights': 'vit_base_patch16_224_in21k',
+ 'random_seed': 42,
+ 'repadapter_bottleneck': 8,
+ 'repadapter_group': 2,
+ 'repadapter_init': 'lora_xavier',
+ 'repadapter_scaler': 1,
+ 'ssf': False,
+ 'store_ckp': False,
+ 'test_batch_size': 512,
+ 'vpt_dropout': 0.1,
+ 'vpt_layer': None,
+ 'vpt_mode': None,
+ 'vpt_num': 10,
+ 'vqt_dropout': 0.1,
+ 'vqt_num': 0,
+ 'warmup_epoch': 10,
+ 'warmup_lr_init': 1e-06}
+[09/23 23:49:42][INFO] PETL_vision:   58: Rank of current process: 0. World size: 1
+[09/23 23:49:42][INFO] PETL_vision:   59: Environment info:
+-------------------  ----------------------------------------------------
+Python               3.7.16 (default, Jan 17 2023, 22:20:44) [GCC 11.2.0]
+ENV_MODULE           <not set>
+PyTorch              1.13.0+cu117
+PyTorch Debug Build  False
+CUDA available       True
+CUDA ID              0
+GPU 0                NVIDIA GeForce RTX 3090
+-------------------  ----------------------------------------------------
+PyTorch built with:
+  - GCC 9.3
+  - C++ Version: 201402
+  - Intel(R) Math Kernel Library Version 2020.0.0 Product Build 20191122 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.6.0 (Git Hash 52b5f107dd9cf10910aaa19cb47f3abf9b349815)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.7
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86
+  - CuDNN 8.5
+  - Magma 2.6.1
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.7, CUDNN_VERSION=8.5.0, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -fabi-version=11 -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wunused-local-typedefs -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Werror=cast-function-type -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.13.0, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, 
+
+[09/23 23:49:42][INFO] PETL_vision:   63: Training with config:
+[09/23 23:49:42][INFO] PETL_vision:   64: {'adapter_bottleneck': 64,
+ 'adapter_init': 'lora_kaiming',
+ 'adapter_scaler': 0.1,
+ 'attention_index': None,
+ 'attention_type': 'full',
+ 'batch_size': 64,
+ 'bitfit': False,
+ 'block_index': None,
+ 'convpass_bottleneck': 8,
+ 'convpass_init': 'lora_xavier',
+ 'convpass_scaler': 10,
+ 'convpass_xavier_init': False,
+ 'crop_size': 224,
+ 'data': 'processed_vtab-caltech101',
+ 'data_path': 'data_folder/vtab_processed',
+ 'debug': False,
+ 'difffit': False,
+ 'drop_path_rate': 0.1,
+ 'early_patience': 100,
+ 'epoch': 100,
+ 'eval_freq': 200,
+ 'experiment_name': 'default_vtab',
+ 'fact_dim': 8,
+ 'fact_scaler': 1.0,
+ 'fact_type': None,
+ 'final_output_name': 'final_result.json',
+ 'final_run': False,
+ 'ft_attn_ln': 'before',
+ 'ft_attn_mode': 'parallel',
+ 'ft_attn_module': None,
+ 'ft_mlp_ln': 'before',
+ 'ft_mlp_mode': 'parallel',
+ 'ft_mlp_module': None,
+ 'full': False,
+ 'gpu_num': 1,
+ 'ln': False,
+ 'lora_bottleneck': 0,
+ 'lr_min': 1e-05,
+ 'merge_factor': 1,
+ 'method_name': 'lora',
+ 'mlp_index': None,
+ 'mlp_type': 'full',
+ 'model': 'vit',
+ 'momentum': 0.9,
+ 'normalized': False,
+ 'optimizer': 'adamw',
+ 'output_dir': './tune_output/default_vtab/processed_vtab/caltech101/lora',
+ 'pretrained_weights': 'vit_base_patch16_224_in21k',
+ 'random_seed': 42,
+ 'repadapter_bottleneck': 8,
+ 'repadapter_group': 2,
+ 'repadapter_init': 'lora_xavier',
+ 'repadapter_scaler': 1,
+ 'ssf': False,
+ 'store_ckp': False,
+ 'test_batch_size': 512,
+ 'vpt_dropout': 0.1,
+ 'vpt_layer': None,
+ 'vpt_mode': None,
+ 'vpt_num': 10,
+ 'vqt_dropout': 0.1,
+ 'vqt_num': 0,
+ 'warmup_epoch': 10,
+ 'warmup_lr_init': 1e-06}
+[09/23 23:49:48][INFO] PETL_vision:   32: all tuning is done, no final run
+[09/23 23:49:51][INFO] PETL_vision:   38: ----------- Total Run time : 0.4505859057108561 mins-----------
+[09/23 23:52:51][INFO] PETL_vision:   58: Rank of current process: 0. World size: 1
+[09/23 23:52:51][INFO] PETL_vision:   59: Environment info:
+-------------------  ----------------------------------------------------
+Python               3.7.16 (default, Jan 17 2023, 22:20:44) [GCC 11.2.0]
+ENV_MODULE           <not set>
+PyTorch              1.13.0+cu117
+PyTorch Debug Build  False
+CUDA available       True
+CUDA ID              0
+GPU 0                NVIDIA GeForce RTX 3090
+-------------------  ----------------------------------------------------
+PyTorch built with:
+  - GCC 9.3
+  - C++ Version: 201402
+  - Intel(R) Math Kernel Library Version 2020.0.0 Product Build 20191122 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.6.0 (Git Hash 52b5f107dd9cf10910aaa19cb47f3abf9b349815)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.7
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86
+  - CuDNN 8.5
+  - Magma 2.6.1
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.7, CUDNN_VERSION=8.5.0, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -fabi-version=11 -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wunused-local-typedefs -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Werror=cast-function-type -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.13.0, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, 
+
+[09/23 23:52:51][INFO] PETL_vision:   63: Training with config:
+[09/23 23:52:51][INFO] PETL_vision:   64: {'adapter_bottleneck': 64,
+ 'adapter_init': 'lora_kaiming',
+ 'adapter_scaler': 0.1,
+ 'attention_index': None,
+ 'attention_type': 'full',
+ 'batch_size': 64,
+ 'bitfit': False,
+ 'block_index': None,
+ 'convpass_bottleneck': 8,
+ 'convpass_init': 'lora_xavier',
+ 'convpass_scaler': 10,
+ 'convpass_xavier_init': False,
+ 'crop_size': 224,
+ 'data': 'processed_vtab-caltech101',
+ 'data_path': 'data_folder/vtab_processed',
+ 'debug': False,
+ 'difffit': False,
+ 'drop_path_rate': 0.1,
+ 'early_patience': 100,
+ 'epoch': 100,
+ 'eval_freq': 200,
+ 'experiment_name': 'default_vtab',
+ 'fact_dim': 8,
+ 'fact_scaler': 1.0,
+ 'fact_type': None,
+ 'final_output_name': 'final_result.json',
+ 'final_run': False,
+ 'ft_attn_ln': 'before',
+ 'ft_attn_mode': 'parallel',
+ 'ft_attn_module': None,
+ 'ft_mlp_ln': 'before',
+ 'ft_mlp_mode': 'parallel',
+ 'ft_mlp_module': None,
+ 'full': False,
+ 'gpu_num': 1,
+ 'ln': False,
+ 'lora_bottleneck': 0,
+ 'lr_min': 1e-05,
+ 'merge_factor': 1,
+ 'method_name': 'lora',
+ 'mlp_index': None,
+ 'mlp_type': 'full',
+ 'model': 'vit',
+ 'momentum': 0.9,
+ 'normalized': False,
+ 'optimizer': 'adamw',
+ 'output_dir': './tune_output/default_vtab/processed_vtab/caltech101/lora',
+ 'pretrained_weights': 'vit_base_patch16_224_in21k',
+ 'random_seed': 42,
+ 'repadapter_bottleneck': 8,
+ 'repadapter_group': 2,
+ 'repadapter_init': 'lora_xavier',
+ 'repadapter_scaler': 1,
+ 'ssf': False,
+ 'store_ckp': False,
+ 'test_batch_size': 512,
+ 'vpt_dropout': 0.1,
+ 'vpt_layer': None,
+ 'vpt_mode': None,
+ 'vpt_num': 10,
+ 'vqt_dropout': 0.1,
+ 'vqt_num': 0,
+ 'warmup_epoch': 10,
+ 'warmup_lr_init': 1e-06}
+[09/23 23:52:51][INFO] PETL_vision:   32: all tuning is done, start final run
+[09/23 23:52:51][INFO] PETL_vision:  141: final_result.json exist, next
+[09/23 23:52:51][INFO] PETL_vision:   38: ----------- Total Run time : 0.03758227030436198 mins-----------

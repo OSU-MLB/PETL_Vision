@@ -1,0 +1,25 @@
+param_set,train_loss,train_top1,train_top5,val_loss,val_top1,val_top5
+"{'adapter_scaler': 0.01, 'drop_path_rate': 0, 'lr': 0.0005, 'wd': 0.0001}",0.02,99.8,100.0,0.33,90.9,99.4
+"{'adapter_scaler': 0.01, 'drop_path_rate': 0, 'lr': 0.0005, 'wd': 0.001}",0.02,99.79,100.0,0.31,91.3,99.1
+"{'adapter_scaler': 0.01, 'drop_path_rate': 0, 'lr': 0.001, 'wd': 0.0001}",0.0,99.97,100.0,0.46,91.2,99.0
+"{'adapter_scaler': 0.01, 'drop_path_rate': 0, 'lr': 0.001, 'wd': 0.001}",0.0,99.97,100.0,0.39,92.9,99.2
+"{'adapter_scaler': 0.01, 'drop_path_rate': 0.1, 'lr': 0.0005, 'wd': 0.0001}",0.2,93.96,99.69,0.23,92.5,99.6
+"{'adapter_scaler': 0.01, 'drop_path_rate': 0.1, 'lr': 0.0005, 'wd': 0.001}",0.2,93.88,99.69,0.23,92.4,99.6
+"{'adapter_scaler': 0.01, 'drop_path_rate': 0.1, 'lr': 0.001, 'wd': 0.0001}",0.12,96.49,99.9,0.23,93.5,99.5
+"{'adapter_scaler': 0.01, 'drop_path_rate': 0.1, 'lr': 0.001, 'wd': 0.001}",0.12,96.33,99.87,0.24,93.2,99.5
+"{'adapter_scaler': 0.01, 'drop_path_rate': 0.2, 'lr': 0.0005, 'wd': 0.0001}",0.33,90.01,99.06,0.26,91.8,99.3
+"{'adapter_scaler': 0.01, 'drop_path_rate': 0.2, 'lr': 0.0005, 'wd': 0.001}",0.34,89.69,99.08,0.25,91.7,99.4
+"{'adapter_scaler': 0.01, 'drop_path_rate': 0.2, 'lr': 0.001, 'wd': 0.0001}",0.24,92.61,99.48,0.26,91.9,99.2
+"{'adapter_scaler': 0.01, 'drop_path_rate': 0.2, 'lr': 0.001, 'wd': 0.001}",0.24,92.55,99.45,0.26,92.2,99.5
+"{'adapter_scaler': 0.1, 'drop_path_rate': 0, 'lr': 0.0005, 'wd': 0.0001}",0.0,99.97,100.0,0.55,91.1,98.7
+"{'adapter_scaler': 0.1, 'drop_path_rate': 0, 'lr': 0.0005, 'wd': 0.001}",0.0,99.97,100.0,0.46,92.0,98.9
+"{'adapter_scaler': 0.1, 'drop_path_rate': 0, 'lr': 0.001, 'wd': 0.0001}",0.0,99.97,100.0,0.53,92.6,98.8
+"{'adapter_scaler': 0.1, 'drop_path_rate': 0, 'lr': 0.001, 'wd': 0.001}",0.0,99.98,100.0,0.57,91.5,98.9
+"{'adapter_scaler': 0.1, 'drop_path_rate': 0.1, 'lr': 0.0005, 'wd': 0.0001}",0.09,97.23,99.89,0.26,92.8,99.5
+"{'adapter_scaler': 0.1, 'drop_path_rate': 0.1, 'lr': 0.0005, 'wd': 0.001}",0.1,97.19,99.88,0.25,93.5,99.1
+"{'adapter_scaler': 0.1, 'drop_path_rate': 0.1, 'lr': 0.001, 'wd': 0.0001}",0.05,98.64,99.95,0.3,92.9,99.2
+"{'adapter_scaler': 0.1, 'drop_path_rate': 0.1, 'lr': 0.001, 'wd': 0.001}",0.05,98.65,99.96,0.29,93.5,99.1
+"{'adapter_scaler': 0.1, 'drop_path_rate': 0.2, 'lr': 0.0005, 'wd': 0.0001}",0.21,93.62,99.62,0.26,92.4,99.2
+"{'adapter_scaler': 0.1, 'drop_path_rate': 0.2, 'lr': 0.0005, 'wd': 0.001}",0.21,93.47,99.61,0.26,92.9,99.2
+"{'adapter_scaler': 0.1, 'drop_path_rate': 0.2, 'lr': 0.001, 'wd': 0.0001}",0.13,96.13,99.78,0.29,92.3,99.1
+"{'adapter_scaler': 0.1, 'drop_path_rate': 0.2, 'lr': 0.001, 'wd': 0.001}",0.13,96.15,99.79,0.3,92.3,99.0

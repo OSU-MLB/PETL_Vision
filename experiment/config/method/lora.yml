@@ -1,0 +1,3 @@
+method_name: lora
+lora_bottleneck: [1, 8, 16, 32]
+#lora_bottleneck: [1, 8, 16]

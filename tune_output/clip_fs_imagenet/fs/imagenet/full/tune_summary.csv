@@ -1,0 +1,3 @@
+param_set,train_loss,train_top1,train_top5,val_loss,val_top1,val_top5,val_best_loss,val_best_top1,val_best_top5
+{'drop_path_rate': 0},1.25,70.73,87.47,1.06,73.6,92.54,0.89,75.9,94.17
+{'drop_path_rate': 0.1},1.18,72.13,88.15,1.03,74.63,92.94,0.99,75.19,93.2

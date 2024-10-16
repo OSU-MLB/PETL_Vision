@@ -1,0 +1,6 @@
+method_name: lora_p_adapter
+ft_mlp_module: adapter
+ft_mlp_mode: sequential_after
+adapter_scaler: 0.1
+adapter_bottleneck: 32
+adapter_init: lora_xavier
