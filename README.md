@@ -1,6 +1,6 @@
 
 <div align=center>
-<h1 style="font-size: 160pt;" align=center><strong>Lessons Learned from a Unifying Empirical Study of Parameter-Efficient Transfer Learning (PETL) in
+<h1 style="font-size: 155 pt;" align=center><strong>Lessons Learned from a Unifying Empirical Study of Parameter-Efficient Transfer Learning (PETL) in
 Visual Recognition</strong></h2>
 <p>
 
@@ -233,7 +233,21 @@ We provide the tuning results `tune_summary.csv`, final run results `final_resul
 
 ## To collect logits and ground truth for PETL methods
 Use [main_collect_prediction.py](main_collect_prediction.py). 
-  
+
+## Citation 
+
+If you use this paper/code in your research, please consider citing us:
+
+```
+@article{mai2024lessons,
+  title={Lessons Learned from a Unifying Empirical Study of Parameter-Efficient Transfer Learning (PETL) in Visual Recognition},
+  author={Mai, Zheda and Zhang, Ping and Tu, Cheng-Hao and Chen, Hong-You and Zhang, Li and Chao, Wei-Lun},
+  journal={arXiv preprint arXiv:2409.16434},
+  year={2024}
+}
+```
+
+
 ## Reference:
 - SSF: https://github.com/dongzelian/SSF  
 - Adaptformer: https://github.com/ShoufaChen/AdaptFormer  
