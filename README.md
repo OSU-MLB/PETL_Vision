@@ -44,7 +44,7 @@ We provide two ways for preparing VTAB-1k dataset
       e.g. `tfds_vtab-cifar(num_classes=100)`  
    - You can find all the dataset names of the TFDS version VTAB1-k from `TFDS_DATASETS` in `utils/global_var.py`  
 2. Processed Version  
-   - Download the processed version from [here](https://1drv.ms/u/s!AmrFUyZ_lDVGinv8y53HX3_rLrpq?e=P5EN5G).  
+   - Download the processed version from [here](https://buckeyemailosu-my.sharepoint.com/:u:/g/personal/mai_145_buckeyemail_osu_edu/ERnzBDVaA6BBpTCoBV0RbVIBF7JEZlIwlGyPdg4AhS_y4g?e=Kjc5uo).  
    - When you pass the data name for `--data` argument, add `process_vtab`, e.g. `process_vtab-cifar`  
  - You can find all the dataset names of the processed version VTAB1-k from `VTAB_DATASETS` in `utils/global_var.py`  
   
